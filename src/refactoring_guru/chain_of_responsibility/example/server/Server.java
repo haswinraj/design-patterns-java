@@ -4,43 +4,20 @@ import refactoring_guru.chain_of_responsibility.example.middleware.Middleware;
 
 import java.util.HashMap;
 import java.util.Map;
-
-/**
- * EN: Server class.
- *
- * RU: Класс сервера.
- */
+/// Server class.
 public class Server {
     private Map<String, String> users = new HashMap<>();
     private Middleware middleware;
-
-    /**
-     * EN: Client passes a chain of object to server. This improves flexibility
-     * and makes testing the server class easier.
-     *
-     * RU: Клиент подаёт готовую цепочку в сервер. Это увеличивает гибкость и
-     * упрощает тестирование класса сервера.
-     */
+    /// Client passes a chain of object to server. This improves flexibility and makes testing the server class easier.
     public void setMiddleware(Middleware middleware) {
         this.middleware = middleware;
     }
 
-    /**
-     * EN: Server gets email and password from client and sends the
-     * authorization request to the chain.
-     *
-     * RU: Сервер получает email и пароль от клиента и запускает проверку
-     * авторизации у цепочки.
-     */
+    /// Server gets email and password from client and sends the authorization request to the chain.
     public boolean logIn(String email, String password) {
         if (middleware.check(email, password)) {
             System.out.println("Authorization have been successful!");
-
-            // EN: Do something useful here for authorized users.
-            //
-            // RU: Здесь должен быть какой-то полезный код, работающий для
-            // авторизированных пользователей.
-
+            //  Do something useful here for authorized users.
             return true;
         }
         return false;

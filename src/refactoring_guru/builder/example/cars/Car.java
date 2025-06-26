@@ -7,8 +7,6 @@ import refactoring_guru.builder.example.components.TripComputer;
 
 /**
  * EN: Car is a product class.
- *
- * RU: Автомобиль — это класс продукта.
  */
 public class Car {
     private final CarType carType;

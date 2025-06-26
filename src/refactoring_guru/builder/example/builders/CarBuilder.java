@@ -12,6 +12,8 @@ import refactoring_guru.builder.example.components.TripComputer;
  *
  * RU: Конкретные строители реализуют шаги, объявленные в общем интерфейсе.
  */
+
+
 public class CarBuilder implements Builder {
     private CarType type;
     private int seats;
